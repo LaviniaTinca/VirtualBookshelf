@@ -1,0 +1,22 @@
+@import "./styles/main";
+
+body,
+html {
+  margin: 0px;
+  padding: 0px;
+  font-family: $ff-inter;
+  background: url("./img/page-background.svg") top left no-repeat $white;
+  background-attachment: fixed;
+}
+
+#root {
+  padding: 38px 20px 0px 30px;
+}
+
+#main_container {
+  background-color: $grey4;
+  border-radius: $border-radius;
+  min-height: calc(100vh - 68px);
+  display: grid;
+  grid-template-columns: 300px 1fr;
+}
