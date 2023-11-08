@@ -5,6 +5,27 @@ import book3 from "./../../img/book-3.jpg";
 import book4 from "./../../img/book-4.jpg";
 import book5 from "./../../img/book-5.jpg";
 
+const handleChange = (event) => {
+  console.log(event.target.value);
+};
+
+const handleCkick = () => {
+  console.log("element clicked");
+};
+
+const handleSubmit = (event) => {
+  event.preventDefault();
+  console.log("form submitted");
+};
+
+const handleFocus = () => {
+  console.log("field focused");
+};
+
+const handleBlur = () => {
+  console.log("field blurred");
+};
+
 function Page({ pageTitle }) {
   return (
     <div id="page">
@@ -107,8 +128,8 @@ function Page({ pageTitle }) {
 
       {/* start add form */}
       <hr />
-      <h1>Adauga o carte</h1>
-      <form>
+      <h1 onClick={handleCkick}>Adauga o carte</h1>
+      <form onSubmit={handleSubmit}>
         <div className="rendered-form">
           <div className="formbuilder-text form-group field-titlu">
             <label htmlFor="titlu" className="formbuilder-text-label">
@@ -122,6 +143,7 @@ function Page({ pageTitle }) {
               id="titlu"
               required="required"
               aria-required="true"
+              onChange={handleChange}
             />
           </div>
           <div className="formbuilder-text form-group field-autor">
@@ -165,6 +187,8 @@ function Page({ pageTitle }) {
               min="0.1"
               max="5.0"
               step="0.1"
+              onFocus={handleFocus}
+              onBlur={handleBlur}
             />
           </div>
           <div className="formbuilder-button form-group field-submit">
