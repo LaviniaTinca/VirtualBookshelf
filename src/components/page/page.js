@@ -110,9 +110,9 @@ function Page({ pageTitle }) {
       <h1>Adauga o carte</h1>
       <form>
         <div className="rendered-form">
-          <div class="formbuilder-text form-group field-titlu">
-            <label for="titlu" className="formbuilder-text-label">
-              Titlu<span class="formbuilder-required">*</span>
+          <div className="formbuilder-text form-group field-titlu">
+            <label htmlFor="titlu" className="formbuilder-text-label">
+              Titlu<span className="formbuilder-required">*</span>
             </label>
             <input
               type="text"
@@ -124,9 +124,9 @@ function Page({ pageTitle }) {
               aria-required="true"
             />
           </div>
-          <div class="formbuilder-text form-group field-autor">
-            <label for="autor" className="formbuilder-text-label">
-              Autor<span class="formbuilder-required">*</span>
+          <div className="formbuilder-text form-group field-autor">
+            <label htmlFor="autor" className="formbuilder-text-label">
+              Autor<span className="formbuilder-required">*</span>
             </label>
             <input
               type="text"
@@ -137,9 +137,9 @@ function Page({ pageTitle }) {
               aria-required="true"
             />
           </div>
-          <div class="formbuilder-text form-group field-an">
-            <label for="an" className="formbuilder-text-label">
-              An<span class="formbuilder-required">*</span>
+          <div className="formbuilder-text form-group field-an">
+            <label htmlFor="an" className="formbuilder-text-label">
+              An<span className="formbuilder-required">*</span>
             </label>
             <input
               type="text"
@@ -148,12 +148,12 @@ function Page({ pageTitle }) {
               id="an"
               required="required"
               aria-required="true"
-              maxlength="4"
+              maxLength="4"
             />
           </div>
-          <div class="formbuilder-text form-group field-rating">
-            <label for="rating" className="formbuilder-text-label">
-              Rating<span class="formbuilder-required">*</span>
+          <div className="formbuilder-text form-group field-rating">
+            <label htmlFor="rating" className="formbuilder-text-label">
+              Rating<span className="formbuilder-required">*</span>
             </label>
             <input
               type="number"
@@ -167,7 +167,7 @@ function Page({ pageTitle }) {
               step="0.1"
             />
           </div>
-          <div class="formbuilder-button form-group field-submit">
+          <div className="formbuilder-button form-group field-submit">
             <button
               type="submit"
               className="btn-default btn"
