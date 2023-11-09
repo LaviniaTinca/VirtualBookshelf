@@ -7,7 +7,7 @@ import book5 from "./../../img/book-5.jpg";
 import Book from "../book/book";
 
 function Page({ pageTitle }) {
-
+ 
   return (
     <div id="page">
       <h1>{pageTitle}</h1>
