@@ -1,9 +1,26 @@
 import React from 'react'
 import FormInput from '../formInput/formInput';
+import { useDispatch } from 'react-redux';
+import { useState } from 'react';
+import { addBook } from '../../store/slices/booksReducer';
 
 const AddForm = () => {
+  let nextId = 0;
+  const initialBook = {
+    titlu: '',
+    autor: '',
+    an: '',
+    rating: '',
+    id: nextId++,
+  }
+  const [bookData, setBookData] = useState(initialBook)
+
+  const dispatch = useDispatch()
     const handleChange = (event) => {
-        console.log(event.target.value);
+        setBookData((prev) => ({
+          ...prev,
+          [event.target.name]: event.target.value,
+        }))
       };
       
       const handleCkick = () => {
@@ -13,7 +30,8 @@ const AddForm = () => {
       
       const handleSubmit = (event) => {
         event.preventDefault();
-        console.log("form submitted");
+        dispatch(addBook(bookData));
+        setBookData(initialBook)
       };
       
       const handleFocus = () => {
@@ -30,13 +48,13 @@ const AddForm = () => {
       <h1 onClick={handleCkick}>Adauga o carte</h1>
       <form onSubmit={handleSubmit}>
         <div className="rendered-form">
-        <FormInput name="titlu" type= "text" required={true} handleChange={handleChange} handleFocus={handleFocus} handleBlur={handleBlur} />
+        <FormInput name="titlu" type= "text" required={true} handleChange={handleChange} handleFocus={handleFocus} handleBlur={handleBlur} value = {bookData.titlu}/>
 
-        <FormInput name="autor" required={true} handleChange={handleChange} handleFocus={handleFocus} handleBlur={handleBlur} />
+        <FormInput name="autor" required={true} handleChange={handleChange} handleFocus={handleFocus} handleBlur={handleBlur} value = {bookData.autor}/>
 
-        <FormInput name="an" required={true} maxLength="4" handleChange={handleChange} handleFocus={handleFocus} handleBlur={handleBlur} />
+        <FormInput name="an" required={true} maxLength="4" handleChange={handleChange} handleFocus={handleFocus} handleBlur={handleBlur} value = {bookData.an}/>
 
-        <FormInput name="rating" type="number" required={true} min="0.1" max="5.0" step="0.1" handleChange={handleChange} handleFocus={handleFocus} handleBlur={handleBlur} />
+        <FormInput name="rating" type="number" required={true} min="0.1" max="5.0" step="0.1" handleChange={handleChange} handleFocus={handleFocus} handleBlur={handleBlur} value = {bookData.rating}/>
 
           
           <div className="formbuilder-button form-group field-submit">
@@ -46,6 +64,7 @@ const AddForm = () => {
               name="submit"
               access="false"
               id="submit"
+              
             >
               Adauga cartea
             </button>

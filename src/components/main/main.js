@@ -1,7 +1,7 @@
 // import AddForm from "../addForm";
 // import Page from "../page/page";
 import FormPage from "../page/FormPage";
-import Page from "../page/HomePage";
+// import Page from "../page/HomePage";
 import "./main.scss";
 
 function Main() {
