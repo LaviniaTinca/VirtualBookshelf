@@ -9,7 +9,7 @@ function Main() {
     <div id="main">
       {/* <Page pageTitle="Dahsboard" /> */}
       {/* <AddForm/> */}
-      <Page  pageTitle="Dahsboard"/>
+      {/* <Page  pageTitle="Dahsboard"/> */}
       <FormPage/>
     </div>
   );

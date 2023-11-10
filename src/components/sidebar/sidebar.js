@@ -12,10 +12,10 @@ function Sidebar() {
       <img src={logo} alt={"logo"} className="logo" />
       <div className="menu">
         
-        <MenuItem image ={home} alt = "home" label = 'Home'/>
-        <MenuItem image ={search} alt = "search" label = 'Search'/>
-        <MenuItem image ={bookshelf} alt = "bookshelf" label = 'Bookshelf'/>
-        <MenuItem image ={contribute} alt = "contribute" label = 'Contribute'/>
+        <MenuItem image ={home} alt = "home" label = 'Home' path = '/'/>
+        <MenuItem image ={search} alt = "search" label = 'Search' path = '/search'/>
+        <MenuItem image ={bookshelf} alt = "bookshelf" label = 'Bookshelf' path = '/myshelf'/>
+        <MenuItem image ={contribute} alt = "addBook" label = 'Add Book' path = '/addBook'/>
         {/* <div className="menu_item">
           <img src={home} alt="Home" />
           <span>Home</span>
